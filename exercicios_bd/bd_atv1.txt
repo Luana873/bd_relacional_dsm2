@@ -1,0 +1,67 @@
+Exercício aula 2 - DDL - Luana Pinheiro
+ 
+postgres=# \l
+postgres=# \c bd_sistema_bancario
+
+                                              
+bd_sistema_bancario=# create table usuario (nome text, numero integer);
+
+bd_sistema_bancario=# create table logradouro (numero integer, rua text, bairro text);
+
+bd_sistema_bancario=# create table faculdade (nome text, cursos text);
+
+bd_sistema_bancario=# create table trabalho (tarefas text);
+
+bd_sistema_bancario=# create table notas (materias text, p1 integer, p2 integer, p3 integer);
+
+bd_sistema_bancario=# \dt
+           List of relations
+Schema |    Name    | Type  |  Owner
+--------+------------+-------+----------
+public | faculdade  | table | postgres
+public | logradouro | table | postgres
+public | notas      | table | postgres
+public | trabalho   | table | postgres
+public | usuario    | table | postgres
+(5 rows)
+ 
+ 
+bd_sistema_bancario=# create table cliente (nome_cliente text, cidade_cliente text, endereco_cliente text);
+
+bd_sistema_bancario=# create table conta (numero_conta integer, nome_agencia text, saldo integer);
+
+bd_sistema_bancario=# create table emprestimo (numero_emprestimo integer, nome_agencia text, valor integer);
+
+bd_sistema_bancario=# create table agencia (nome_agencia text, cidade_agencia text, depositos text);
+
+
+
+bd_sistema_bancario=# drop table usuario;
+
+bd_sistema_bancario=# drop table logradouro;
+
+bd_sistema_bancario=# drop table faculdade;
+
+bd_sistema_bancario=# drop table trabalho;
+
+bd_sistema_bancario=# drop table notas;
+
+
+
+bd_sistema_bancario=# alter table cliente add column idade integer;
+
+bd_sistema_bancario=# alter table cliente rename column idade to idades;
+
+bd_sistema_bancario=# alter table cliente drop column idades;
+
+bd_sistema_bancario=# alter table cliente rename to tbcliente;
+
+
+                    
+bd_sistema_bancario=# create schema luanap;
+
+bd_sistema_bancario=# \dn
+
+bd_sistema_bancario=# show search_path;
+
+bd_sistema_bancario=# set search_path = luanap;
